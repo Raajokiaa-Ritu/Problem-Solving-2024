@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+
+int i,j,n,m,e,s;
+vector<int>v;
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif
+
+	long long i,n,t,a,b;
+	cin>>t;
+	while(t--)
+	{
+		cin>>n;
+		long long ans = 0;
+		ans = log2(n);
+		//ceil(log2(n)) == floor(log2(n))
+		a = ceil(log2(n));
+		b = floor(log2(n));
+		if(a==b)
+		{
+			cout<<n<<endl;
+		}
+		else
+		{
+
+			long long base = 2, exponent = ans, result =1 ;
+			   while (exponent != 0) {
+			   	result *= base;
+			   	--exponent;
+			   }
+			   cout<<result<<endl;
+		}
+	}
+}
