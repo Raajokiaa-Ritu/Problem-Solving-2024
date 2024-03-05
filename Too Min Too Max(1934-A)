@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+
+int i,j,n,m,e,s;
+vector<int>v;
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif
+
+	int i,a,b,c,d,n;
+	long long sum = 0;
+	int t;cin>>t;
+	while(t--)
+	{
+		cin>>n; 
+		vector<int>arr(n);
+
+		for(i = 0; i< n; i++)
+		{
+			cin>>arr[i];
+		}
+		sort(arr.begin(), arr.end());
+		a = arr[0], b=arr[1], c=arr[n-2], d=arr[n-1];
+		//cout<<a<<" "<<b<<" "<<c<<" "<<d<<endl;
+
+		long long sum = abs(d-b)+abs(b-c)+abs(c-a)+abs(a-d);
+		cout<<sum<<endl;
+
+	}
+
+}
